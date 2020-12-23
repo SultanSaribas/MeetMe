@@ -13,7 +13,7 @@
 
         <meta-data
             android:name="com.google.android.actions"
-            android:resource="@xml/edit_text" />
+            android:resource="@drawable/edit_text" />
 
         <activity android:name=".SignInActivity" />
         <activity android:name=".MainActivity">
