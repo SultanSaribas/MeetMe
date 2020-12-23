@@ -12,20 +12,26 @@
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".DiscoverActivity" />
         <activity android:name=".EventDetailActivity" />
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" >
+        </activity>
+
         <activity android:name=".RegisterActivity" />
 
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@drawable/edit_text" />
 
-        <activity android:name=".SignInActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SignInActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity">
+
         </activity>
     </application>
 
