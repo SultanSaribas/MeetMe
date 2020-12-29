@@ -36,5 +36,14 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        sport_button.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SportActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }
