@@ -2,7 +2,9 @@ package com.example.meetme;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
@@ -24,6 +26,15 @@ public class HomeActivity extends AppCompatActivity {
         game=findViewById(R.id.game_button);
         business=findViewById(R.id.business_button);
         psychology=findViewById(R.id.psychology_button);
+
+        science_and_technology.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
