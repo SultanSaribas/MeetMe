@@ -32,30 +32,8 @@ public class HomeActivity extends AppCompatActivity {
         business=findViewById(R.id.business_button);
         psychology=findViewById(R.id.psychology_button);
 
-<<<<<<< Updated upstream
-        science_and_technology.setOnClickListener(new View.OnClickListener(){
 
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        sport_button.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, SportActivity.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-=======
             button_navigations();
->>>>>>> Stashed changes
             navigationbar();
 
     }
