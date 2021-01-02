@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header_cover_image"
-            android:background="#2B2B2B"
+            android:background="@color/colorAccent"
             android:elevation="4dp"
             android:paddingBottom="24dp">
 
@@ -73,6 +73,7 @@
             android:background="@color/colorPrimaryDark">
 
             <TextView
+                android:layout_marginTop="10dp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
@@ -86,9 +87,17 @@
                 android:textColor="@color/colorGrey2"/>
 
             <Button
+                android:layout_marginTop="5dp"
                 android:id="@+id/create_event_profile"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="70dp"
+                android:text="Create an Event"
+                android:textStyle="bold"
+                android:background="#970A26"
+                android:textColor="@color/colorGrey1"
+                android:textAllCaps="false"
+                android:textSize="20dp"
+
                 />
 
 

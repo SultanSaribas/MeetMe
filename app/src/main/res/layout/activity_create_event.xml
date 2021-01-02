@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/backgorund"
+    >
+
+    <LinearLayout
+        android:padding="4dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="15dp"
+            android:text="Complete All Steps to Create Your Special Event"
+            android:textStyle="bold"
+            android:textSize="28dp"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+
+            />
+
+        <EditText
+            android:id="@+id/et_Activity_name"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="Give a Name for Your Event"
+            android:inputType="textMultiLine"
+            android:maxLength="500"
+            android:maxLines="4"
+            android:minLines="2"
+            android:textColor="@color/colorPrimaryDark"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp" />
+
+
+
+            <EditText
+                android:id="@+id/time_create"
+                android:layout_width="64dp"
+                android:layout_height="41dp"
+                android:ems="10"
+                android:layout_marginLeft="15dp"
+                android:hint="Time"
+                android:inputType="number"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+
+                android:textColorHint="@color/colorAccent"
+
+                />
+
+        <EditText
+            android:id="@+id/description_create"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Mention  a Little Bit about the Event"
+            android:inputType="number"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/colorAccent"
+
+            android:textSize="16sp"
+
+            />
+
+        <EditText
+            android:id="@+id/link_create"
+            android:layout_width="wrap_content"
+            android:layout_height="41dp"
+            android:layout_marginLeft="15dp"
+            android:hint="Provide the Link of Platform"
+            android:inputType="number"
+            android:layout_marginTop="20dp"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="16sp"
+
+            />
+
+
+        <Button
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/btn_kaydet_activity_danisman_bilgileri"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="4dp"
+            android:background="@color/colorAccent"
+            android:text="CREATE"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
+            />
+
+
+
+
+    </LinearLayout>
+
+</ScrollView>
