@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header_cover_image"
-            android:background="@color/colorAccent"
+            android:background="#2B2B2B"
             android:elevation="4dp"
             android:paddingBottom="24dp">
 
@@ -84,6 +84,14 @@
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/colorGrey2"/>
+
+            <Button
+                android:id="@+id/create_event_profile"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                />
+
+
 
 
         </LinearLayout>
