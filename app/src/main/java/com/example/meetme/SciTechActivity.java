@@ -2,12 +2,15 @@ package com.example.meetme;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.meetme.Adapters.AdapterforDiscover;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class SciTechActivity extends AppCompatActivity {
@@ -18,6 +21,7 @@ public class SciTechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sci_tech);
 
         navigationbar();
+        recyclerView();
     }
 
 
@@ -46,5 +50,13 @@ public class SciTechActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void recyclerView(){
+        final RecyclerView recyclerView = findViewById(R.id.rv_discover);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
+        recyclerView.setAdapter(adapter);
     }
 }

@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity {
         business=findViewById(R.id.business_button);
         psychology=findViewById(R.id.psychology_button);
 
+<<<<<<< Updated upstream
         science_and_technology.setOnClickListener(new View.OnClickListener(){
 
             @Override
@@ -52,6 +53,9 @@ public class HomeActivity extends AppCompatActivity {
 
 
 
+=======
+            button_navigations();
+>>>>>>> Stashed changes
             navigationbar();
 
     }
@@ -77,6 +81,90 @@ public class HomeActivity extends AppCompatActivity {
                        break;
                }
                return false;
+           }
+       });
+   }
+
+   public void button_navigations(){
+       science_and_technology.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+
+       sport_button.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       art_and_culture.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       entertainment.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       education.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       history.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       med.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       game.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       business.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
+           }
+       });
+       psychology.setOnClickListener(new View.OnClickListener(){
+
+           @Override
+           public void onClick(View v) {
+               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               startActivity(intent);
            }
        });
    }

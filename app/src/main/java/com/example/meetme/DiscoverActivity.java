@@ -2,12 +2,17 @@ package com.example.meetme;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.meetme.Adapters.AdapterforDiscover;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class DiscoverActivity extends AppCompatActivity {
@@ -18,6 +23,7 @@ public class DiscoverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_discover);
 
         navigationbar();
+        recyclerView();
     }
 
 
@@ -35,8 +41,6 @@ public class DiscoverActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.nav_search:
-                        intent = new Intent(DiscoverActivity.this, DiscoverActivity.class);
-                        startActivity(intent);
                         break;
                     case R.id.nav_profile:
                         intent = new Intent(DiscoverActivity.this, ProfileActivity.class);
@@ -46,5 +50,13 @@ public class DiscoverActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void recyclerView(){
+        final RecyclerView recyclerView = findViewById(R.id.rv_discover);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
+        recyclerView.setAdapter(adapter);
     }
 }
