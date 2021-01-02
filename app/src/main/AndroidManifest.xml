@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CreateEvent"></activity>
+        <activity android:name=".BusinessActivity"></activity>
+        <activity android:name=".PsychologyActivity" />
+        <activity android:name=".GameActivity" />
+        <activity android:name=".MedActivity" />
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".EducationActivity" />
+        <activity android:name=".EntertainmentActivity" />
+        <activity android:name=".ArtandCultureActivity" />
+        <activity android:name=".CreateEvent" />
         <activity android:name=".SportActivity" />
         <activity android:name=".SciTechActivity" />
         <activity android:name=".ProfileActivity" />
