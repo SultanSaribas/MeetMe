@@ -1,8 +1,10 @@
 package com.example.meetme;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -13,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,7 +33,8 @@ public class CreateEvent extends AppCompatActivity {
     EditText eventName, eventTime, eventDescription, eventLink;
 
     Spinner categories;
-    String[] listCategories = {"one", "two", "ghjkl", "5"};
+    String[] listCategories = {"Science and Technology", "Sport", "Art and Culture", "Entertainment", "Education", "History",
+    "Med", "Game", "Business", "Psychology"};
     private ArrayAdapter<String> categoriesAdapter;
 
     FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance("https://meetme-2ff9d-default-rtdb.firebaseio.com/");
@@ -42,6 +46,8 @@ public class CreateEvent extends AppCompatActivity {
     SharedPreferences sharedPref;
 
     Context context;
+
+    String selectedCategoriy;
 
 
     @Override
@@ -63,32 +69,50 @@ public class CreateEvent extends AppCompatActivity {
 
         categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
+            @SuppressLint("ResourceAsColor")
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                //Seçilen il ve ilçeyi ekranda gösteriyoruz.
-                Toast.makeText(getBaseContext(), ""+categories.getSelectedItem().toString()+"n"+parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getBaseContext(), ""+categories.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+                selectedCategoriy = categories.getSelectedItem().toString();
             }
 
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
 
-
-
-
-
-
-
-     /*   btn_kaydet_activity_danisman_bilgileri.setOnClickListener(new View.OnClickListener(){
-
+        createEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                //TODO: The Event will be saved to Database
+            public void onClick(View view) {
+                addEvent();
             }
-        });*/
+        });
 
         navigationbar();
+    }
+
+    public void addEvent(){
+        if (eventName.getText().toString().equalsIgnoreCase("")
+                || eventTime.getText().toString().equalsIgnoreCase("")
+                || eventLink.getText().toString().equalsIgnoreCase("")
+                || eventDescription.getText().toString().equalsIgnoreCase("")) {
+            Toast.makeText(CreateEvent.this, "Please fill all blank places", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        else{
+            DatabaseReference categoriesReference = mFirebaseDatabase.getReference("Categories");
+            if (selectedCategoriy.equals("Science and Technology")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("ScienceandTech").child(key).child("eventId").setValue(key);
+                categoriesReference.child("ScienceandTech").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("ScienceandTech").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("ScienceandTech").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("ScienceandTech").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("ScienceandTech").child(key).child("evetCategory").setValue("Science and Technology");
+            }
+
+
+        }
     }
 
     public void navigationbar() {
