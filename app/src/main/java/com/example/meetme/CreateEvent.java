@@ -63,7 +63,7 @@ public class CreateEvent extends AppCompatActivity {
         eventLink =  findViewById(R.id.link_create);
         categories = findViewById(R.id.spinner_categories);
 
-        categoriesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listCategories);
+        categoriesAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, listCategories);
         categoriesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         categories.setAdapter(categoriesAdapter);
 
@@ -73,7 +73,7 @@ public class CreateEvent extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                Toast.makeText(getBaseContext(), ""+categories.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getBaseContext(), ""+categories.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
                 selectedCategoriy = categories.getSelectedItem().toString();
             }
 
@@ -101,6 +101,8 @@ public class CreateEvent extends AppCompatActivity {
         }
         else{
             DatabaseReference categoriesReference = mFirebaseDatabase.getReference("Categories");
+            DatabaseReference eventsReference = mFirebaseDatabase.getReference("Events");
+
             if (selectedCategoriy.equals("Science and Technology")){
                 String key = categoriesReference.push().getKey();
                 categoriesReference.child("ScienceandTech").child(key).child("eventId").setValue(key);
@@ -108,10 +110,171 @@ public class CreateEvent extends AppCompatActivity {
                 categoriesReference.child("ScienceandTech").child(key).child("eventTime").setValue(eventTime.getText().toString());
                 categoriesReference.child("ScienceandTech").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
                 categoriesReference.child("ScienceandTech").child(key).child("eventLink").setValue(eventLink.getText().toString());
-                categoriesReference.child("ScienceandTech").child(key).child("evetCategory").setValue("Science and Technology");
+                categoriesReference.child("ScienceandTech").child(key).child("eventCategory").setValue("Science and Technology");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Science and Technology");
             }
 
+            else if (selectedCategoriy.equals("Sport")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Sport").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Sport").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Sport").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Sport").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Sport").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Sport").child(key).child("eventCategory").setValue("Sport");
 
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Sport");
+            }
+
+            else if (selectedCategoriy.equals("Art and Culture")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("ArtandCulture").child(key).child("eventId").setValue(key);
+                categoriesReference.child("ArtandCulture").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("ArtandCulture").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("ArtandCulture").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("ArtandCulture").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("ArtandCulture").child(key).child("eventCategory").setValue("Art and Culture");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Art and Culture");
+            }
+
+            else if (selectedCategoriy.equals("Entertainment")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Entertainment").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Entertainment").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Entertainment").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Entertainment").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Entertainment").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Entertainment").child(key).child("eventCategory").setValue("Entertainment");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Entertainment");
+            }
+
+            else if (selectedCategoriy.equals("Education")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Education").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Education").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Education").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Education").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Education").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Education").child(key).child("eventCategory").setValue("Education");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Education");
+            }
+
+            else if (selectedCategoriy.equals("History")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("History").child(key).child("eventId").setValue(key);
+                categoriesReference.child("History").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("History").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("History").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("History").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("History").child(key).child("eventCategory").setValue("History");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("History");
+            }
+
+            else if (selectedCategoriy.equals("Med")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Med").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Med").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Med").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Med").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Med").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Med").child(key).child("eventCategory").setValue("Med");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Med");
+            }
+
+            else if (selectedCategoriy.equals("Game")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Game").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Game").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Game").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Game").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Game").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Game").child(key).child("eventCategory").setValue("Game");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Game");
+            }
+
+            else if (selectedCategoriy.equals("Business")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Business").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Business").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Business").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Business").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Business").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Business").child(key).child("eventCategory").setValue("Business");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Business");
+            }
+
+            else if (selectedCategoriy.equals("Psychology")){
+                String key = categoriesReference.push().getKey();
+                categoriesReference.child("Psychology").child(key).child("eventId").setValue(key);
+                categoriesReference.child("Psychology").child(key).child("eventName").setValue(eventName.getText().toString());
+                categoriesReference.child("Psychology").child(key).child("eventTime").setValue(eventTime.getText().toString());
+                categoriesReference.child("Psychology").child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                categoriesReference.child("Psychology").child(key).child("eventLink").setValue(eventLink.getText().toString());
+                categoriesReference.child("Psychology").child(key).child("eventCategory").setValue("Psychology");
+
+                eventsReference.child(key).child("eventId").setValue(key);
+                eventsReference.child(key).child("eventName").setValue(eventName.getText().toString());
+                eventsReference.child(key).child("eventTime").setValue(eventTime.getText().toString());
+                eventsReference.child(key).child("eventDescription").setValue(eventDescription.getText().toString());
+                eventsReference.child(key).child("eventLink").setValue(eventLink.getText().toString());
+                eventsReference.child(key).child("eventCategory").setValue("Psychology");
+            }
+
+            Intent intent = new Intent(CreateEvent.this, ProfileActivity.class);
+            startActivity(intent);
         }
     }
 
