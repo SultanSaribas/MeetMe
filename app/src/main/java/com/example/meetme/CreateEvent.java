@@ -33,7 +33,7 @@ public class CreateEvent extends AppCompatActivity {
     String[] listCategories = {"one", "two", "ghjkl", "5"};
     private ArrayAdapter<String> categoriesAdapter;
 
-    FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
+    FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance("https://meetme-2ff9d-default-rtdb.firebaseio.com/");
 
     DatabaseReference userReference = mFirebaseDatabase.getReference("Users")
             .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
