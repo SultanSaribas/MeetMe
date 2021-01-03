@@ -58,7 +58,7 @@
                 android:ems="10"
                 android:layout_marginLeft="15dp"
                 android:hint="Time"
-                android:inputType="number"
+                android:inputType="datetime"
                 android:layout_marginTop="20dp"
                 android:textSize="16sp"
 
@@ -72,7 +72,7 @@
             android:layout_height="41dp"
             android:layout_marginLeft="15dp"
             android:hint="Mention  a Little Bit about the Event"
-            android:inputType="number"
+            android:inputType="textMultiLine"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/colorAccent"
 
@@ -86,7 +86,7 @@
             android:layout_height="41dp"
             android:layout_marginLeft="15dp"
             android:hint="Provide the Link of Platform"
-            android:inputType="number"
+            android:inputType="textUri"
             android:layout_marginTop="20dp"
             android:textColorHint="@color/colorAccent"
             android:textSize="16sp"
