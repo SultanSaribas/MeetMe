@@ -93,10 +93,33 @@
 
             />
 
+        <TextView
+            android:id="@+id/textview_create_evet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose a Category:"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="16sp"
+            android:layout_marginStart="15dp"
+            />
+
+
+
+        <Spinner
+            android:id="@+id/spinner_categories"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="15dp"
+            android:backgroundTint="@color/colorAccent"
+
+            />
+
 
         <Button
             android:layout_gravity="center_horizontal"
-            android:id="@+id/btn_kaydet_activity_danisman_bilgileri"
+            android:id="@+id/btn_create_event"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"

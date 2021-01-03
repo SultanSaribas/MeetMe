@@ -1,24 +1,84 @@
 package com.example.meetme;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class CreateEvent extends AppCompatActivity {
-    Button btn_kaydet_activity_danisman_bilgileri;
+
+    Button createEventButton;
+    EditText eventName, eventTime, eventDescription, eventLink;
+
+    Spinner categories;
+    String[] listCategories = {"one", "two", "ghjkl", "5"};
+    private ArrayAdapter<String> categoriesAdapter;
+
+    FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance();
+
+    DatabaseReference userReference = mFirebaseDatabase.getReference("Users")
+            .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+    DatabaseReference categoriesReference = mFirebaseDatabase.getReference("Categories");
+    SharedPreferences sharedPref;
+
+    Context context;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_event);
+        context = this;
+
+        createEventButton = findViewById(R.id.btn_create_event);
+        eventName = findViewById(R.id.et_Activity_name);
+        eventTime = findViewById(R.id.time_create);
+        eventDescription =  findViewById(R.id.description_create);
+        eventLink =  findViewById(R.id.link_create);
+        categories = findViewById(R.id.spinner_categories);
+
+        categoriesAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, listCategories);
+        categoriesAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        categories.setAdapter(categoriesAdapter);
+
+        categories.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                //Seçilen il ve ilçeyi ekranda gösteriyoruz.
+                Toast.makeText(getBaseContext(), ""+categories.getSelectedItem().toString()+"n"+parent.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
+
+
+
+
 
      /*   btn_kaydet_activity_danisman_bilgileri.setOnClickListener(new View.OnClickListener(){
 
@@ -57,4 +117,5 @@ public class CreateEvent extends AppCompatActivity {
             }
         });
     }
+
 }
