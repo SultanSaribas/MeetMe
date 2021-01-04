@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="76dp"
-                android:text="Event Name"
+                android:text="Developments on AI"
                 android:textColor="@color/colorPrimary"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -85,7 +85,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Event Description"
+                android:text="Discussion about GPT-3 and neuralink  brain chip"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/colorGrey2"/>
@@ -110,7 +110,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Time"
+                android:text="11/01/2021"
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/colorGrey2"/>
@@ -135,7 +135,7 @@
                 android:clickable="true"
                 android:elevation="4dp"
                 android:padding="20dp"
-                android:text="Link"
+                android:text="https://zoom.us/j/95741383907?pwd=azc5L0tueFphdDV4WDBkUWFzbkZ2dz09  "
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textColor="@color/colorGrey2"/>

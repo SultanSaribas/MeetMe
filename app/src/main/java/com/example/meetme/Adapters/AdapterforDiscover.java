@@ -18,9 +18,9 @@ import com.example.meetme.R;
 import com.squareup.picasso.Picasso;
 
 public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover.MyViewHolder>  {
-    String event_names[]={"Event A","Event B","Event C","Event D","Event E","Event F","Event G","Event H"};
-    String tv_release_date_comments_item[]={"27/01/2021","27/01/2021","27/01/2021","27/01/2021","27/01/2021","27/01/2021","27/01/2021","27/01/2021"};
-    String event_description[]={"Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği","Tartışma etkinliği"};
+    String event_names[]={"Discussion about LOTR","Mythology of Ancient Greece","Comments on CyberPunk","Corona Virus","Developments on AI","Discussion about Pride and Prejudice"};
+    String tv_release_date_comments_item[]={"05/01/2021","06/01/2021","06/01/2021","07/01/2021","07/01/2021","10/01/2021","11/01/2021","15/01/2021"};
+    String event_description[]={"Comments on the Lord of the Rings","The story of Hades","Comments on new game called CyberPunk","Last developments about vaccines","Discussion about GPT-3 and neuralink  brain chip","Tartışma etkinliği","Tartışma etkinliği","Jane Austen is a feminist or not?"};
     Boolean favorite_comments_item[]={false,true,true,true,false,false,true,true};
 
 
