@@ -18,6 +18,10 @@ public class Event {
         this.eventCategory = eventCategory;
     }
 
+    public Event() {
+
+    }
+
     public String getEventId() {
         return eventId;
     }

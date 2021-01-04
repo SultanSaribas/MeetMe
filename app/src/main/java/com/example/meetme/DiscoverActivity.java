@@ -43,7 +43,7 @@ public class DiscoverActivity extends AppCompatActivity {
 
         navigationbar();
         recyclerView();
-        readEvents();
+        //readEvents();
 
     }
 
@@ -52,11 +52,27 @@ public class DiscoverActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Map<String, Event> td = (HashMap<String,Event>) dataSnapshot.getValue();
-                Map<String, Event> values = (Map<String, Event>) td.values();
 
-                List<Event> cc = (List<Event>) values.values();
 
-                Log.v("fff", cc.get(0).getEventName());
+                Log.v("senos", String.valueOf(td.values()));
+                //Log.v("senos", String.valueOf(dataSnapshot.child()));
+
+
+                for(int i=0; i<td.size(); i++){
+                    Object firstKey = td.keySet().toArray()[i];
+                    DatabaseReference newref =  eventReference.child(firstKey.toString());
+                    // valueForFirstKey = new Event();
+                    Log.v("senos", String.valueOf(newref.child("eventName")));
+                    //Event valueForFirstKey = new Event(newref.ge,  td.get(firstKey).getEventName(),  td.get(firstKey).getEventTime(),  td.get(firstKey).getEventLink(),  td.get(firstKey).getEventDescription(),  td.get(firstKey).getEventCategory());
+                    //Log.v("senos", String.valueOf(valueForFirstKey));
+                   // eventList.add(i, valueForFirstKey);
+                }
+
+               // Map<String, Event> values = (Map<String, Event>) td.values();
+
+              //  List<Event> cc = (List<Event>) td.values();
+
+              //  Log.v("senos", cc.get(0).getEventName());
 
                 //notifyDataSetChanged();
             }
