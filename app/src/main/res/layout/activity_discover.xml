@@ -10,8 +10,8 @@
 
 
     <TextView
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/discover"
@@ -25,7 +25,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_discover"
         android:layout_marginTop="40dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
         android:layout_below="@+id/discover"
         android:layout_above="@+id/navigation_bar"
         android:layout_width="wrap_content"
