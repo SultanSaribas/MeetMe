@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, SportActivity.class);
                startActivity(intent);
            }
        });
@@ -93,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, EntertainmentActivity.class);
                startActivity(intent);
            }
        });
@@ -101,7 +101,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, EducationActivity.class);
                startActivity(intent);
            }
        });
@@ -109,7 +109,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, HistoryActivity.class);
                startActivity(intent);
            }
        });
@@ -117,7 +117,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, MedActivity.class);
                startActivity(intent);
            }
        });
@@ -133,7 +133,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, BusinessActivity.class);
                startActivity(intent);
            }
        });
@@ -141,7 +141,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, PsychologyActivity.class);
                startActivity(intent);
            }
        });
