@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meetme.DiscoverActivity;
@@ -43,12 +44,24 @@ public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterforDiscover.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull AdapterforDiscover.MyViewHolder holder, final int position) {
         Picasso.get().load( R.drawable.logoaction).into(holder.poster_movie_item_comments);
         holder.event_name.setText(Data.get(position).getEventName());
         holder.tv_release_date_comments_item.setText(Data.get(position).getEventTime());
         holder.event_description.setText(Data.get(position).getEventDescription());
         holder.favorite_comments_item.setChecked(false);
+
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, EventDetailActivity.class);
+                intent.putExtra("event_name", Data.get(position).getEventName());
+                intent.putExtra("event_description", Data.get(position).getEventDescription());
+                intent.putExtra("event_time", Data.get(position).getEventTime());
+                intent.putExtra("event_link", Data.get(position).getEventLink());
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -61,13 +74,14 @@ public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover
         this.context = context;
     }*/
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         // each data item is just a string in this case
         public ImageView poster_movie_item_comments;
         public TextView event_name;
         public TextView tv_release_date_comments_item;
         public TextView event_description;
         public CheckBox favorite_comments_item;
+        public CardView cardView;
 
 
         public MyViewHolder (@NonNull View itemView){
@@ -76,20 +90,14 @@ public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover
             event_name =(TextView) itemView.findViewById(R.id.event_name);
             tv_release_date_comments_item = (TextView)itemView.findViewById(R.id.tv_release_date_comments_item);
             event_description= (TextView)itemView.findViewById(R.id.event_description);
+            cardView = itemView.findViewById(R.id.cardView);
             favorite_comments_item=(CheckBox) itemView.findViewById(R.id.favorite_comments_item);
             context = itemView.getContext();
             itemView.setClickable(true);
-            itemView.setOnClickListener(this);
+           // itemView.setOnClickListener(this);
 
 
 
-        }
-
-
-        @Override
-        public void onClick(View v) {
-            Intent intent = new Intent(context, EventDetailActivity.class);
-            context.startActivity(intent);
         }
     }
 }

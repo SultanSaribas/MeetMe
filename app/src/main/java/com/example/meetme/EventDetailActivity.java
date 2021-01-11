@@ -7,15 +7,34 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class EventDetailActivity extends AppCompatActivity {
 
+    TextView name, desc, time, link;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail);
+
+        name = findViewById(R.id.event_detail_name);
+        desc = findViewById(R.id.detail_desc);
+        time = findViewById(R.id.time_event_detail);
+        link = findViewById(R.id.link_detail);
+
+        if (getIntent().hasExtra("event_name")){
+            String namexx = getIntent().getStringExtra("event_name");
+            name.setText(namexx);
+            String ddd = getIntent().getStringExtra("event_description");
+            desc.setText(ddd);
+            time.setText(getIntent().getStringExtra("event_time"));
+            link.setText(getIntent().getStringExtra("event_link"));
+
+        }
+
 
         navigationbar();
     }
