@@ -54,7 +54,7 @@
                 android:layout_marginTop="76dp"
                 android:text="Melike Doğru"
                 android:textColor="@color/colorPrimary"
-                android:textSize="24sp"
+                android:textSize="26sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_below="@+id/user_profile_name"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="12dp"
-                android:text="Computer Engineering Student"
+                android:text=""
                 android:textColor="@color/colorPrimary"
                 android:textSize="14sp" />
         </RelativeLayout>

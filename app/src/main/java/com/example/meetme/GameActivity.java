@@ -27,7 +27,7 @@ public class GameActivity extends AppCompatActivity {
         txt.setText("Game Meetings");
 
         navigationbar();
-        recyclerView();
+       // recyclerView();
 
     }
 
@@ -57,12 +57,12 @@ public class GameActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void recyclerView(){
         final RecyclerView recyclerView = findViewById(R.id.rv_discover);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
+       // AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
         recyclerView.setAdapter(adapter);
-    }
+    }*/
 }

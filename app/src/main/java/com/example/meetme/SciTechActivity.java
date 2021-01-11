@@ -21,7 +21,7 @@ public class SciTechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sci_tech);
 
         navigationbar();
-        recyclerView();
+       // recyclerView();
     }
 
 
@@ -51,12 +51,12 @@ public class SciTechActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     public void recyclerView(){
         final RecyclerView recyclerView = findViewById(R.id.rv_discover);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
         recyclerView.setAdapter(adapter);
-    }
+    }*/
 }

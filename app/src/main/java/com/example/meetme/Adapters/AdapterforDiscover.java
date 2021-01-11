@@ -14,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.meetme.DiscoverActivity;
 import com.example.meetme.EventDetailActivity;
+import com.example.meetme.Models.Event;
 import com.example.meetme.R;
 import com.squareup.picasso.Picasso;
+
+import java.util.List;
 
 public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover.MyViewHolder>  {
     String event_names[]={"Discussion about LOTR","Mythology of Ancient Greece","Comments on CyberPunk","Corona Virus","Developments on AI","Discussion about Pride and Prejudice"};
@@ -25,32 +28,38 @@ public class AdapterforDiscover  extends RecyclerView.Adapter<AdapterforDiscover
 
 
     private Context context;
+    List<Event> Data;
+
+    public AdapterforDiscover(Context context, List<Event> data){
+        this.context = context;
+        this.Data = data;
+    }
     @NonNull
     @Override
     public AdapterforDiscover.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view =  LayoutInflater.from(parent.getContext()).inflate(R.layout.card_item, parent, false);
+        View view =  LayoutInflater.from(context).inflate(R.layout.card_item, parent, false);
         return new AdapterforDiscover.MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull AdapterforDiscover.MyViewHolder holder, int position) {
         Picasso.get().load( R.drawable.logoaction).into(holder.poster_movie_item_comments);
-        holder.event_name.setText(event_names[position]);
-        holder.tv_release_date_comments_item.setText(tv_release_date_comments_item[position]);
-        holder.event_description.setText(event_description[position]);
-        holder.favorite_comments_item.setChecked(favorite_comments_item[position]);
+        holder.event_name.setText(Data.get(position).getEventName());
+        holder.tv_release_date_comments_item.setText(Data.get(position).getEventTime());
+        holder.event_description.setText(Data.get(position).getEventDescription());
+        holder.favorite_comments_item.setChecked(false);
 
     }
 
     @Override
     public int getItemCount() {
-        return event_names.length;
+        return Data.size();
     }
-
+/*
     public AdapterforDiscover(Context context) {
         this.context = context;
-    }
+    }*/
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         // each data item is just a string in this case

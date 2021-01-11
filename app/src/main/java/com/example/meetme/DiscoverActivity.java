@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,21 +31,54 @@ import java.util.Map;
 
 public class DiscoverActivity extends AppCompatActivity {
 
-    FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance("https://meetme-2ff9d-default-rtdb.firebaseio.com/");
+    //FirebaseDatabase mFirebaseDatabase = FirebaseDatabase.getInstance("https://meetme-2ff9d-default-rtdb.firebaseio.com/");
 
-    final List<Event> eventList = new ArrayList<>();
+    List<Event> eventList;
 
-    DatabaseReference eventReference = mFirebaseDatabase.getReference("Events");
+    DatabaseReference eventReference;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discover);
 
+        eventList = new ArrayList<>();
+
+        eventReference = FirebaseDatabase.getInstance("https://meetme-2ff9d-default-rtdb.firebaseio.com/").getReference("Events");
+
         navigationbar();
-        recyclerView();
+        //recyclerView();
         //readEvents();
 
+        metot();
+
+    }
+
+
+    public void metot(){
+        eventReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                eventList.clear();
+
+                for(DataSnapshot eventsDatasanp : dataSnapshot.getChildren()){
+
+                    Event event = eventsDatasanp.getValue(Event.class);
+                    eventList.add(event);
+                }
+                recyclerView();
+
+                Log.v("sondeneme", String.valueOf(eventList.get(0).getEventName()));
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     public void readEvents(){
@@ -116,7 +150,7 @@ public class DiscoverActivity extends AppCompatActivity {
         final RecyclerView recyclerView = findViewById(R.id.rv_discover);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        AdapterforDiscover adapter = new AdapterforDiscover(getApplication());
+        AdapterforDiscover adapter = new AdapterforDiscover(context, eventList);
         recyclerView.setAdapter(adapter);
     }
 }
