@@ -40,8 +40,8 @@
 
             <Button
                 android:id="@+id/science_and_technology_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:background="@drawable/button_home"
                 android:text="Science and Tech"
                 android:textAlignment="center"
@@ -53,8 +53,8 @@
 
             <Button
                 android:id="@+id/sport_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/button_home"
                 android:text="Sport"
@@ -75,8 +75,8 @@
 
             <Button
                 android:id="@+id/art_and_culture_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:background="@drawable/button_home"
                 android:text="Art and Culture"
                 android:textAlignment="center"
@@ -88,8 +88,8 @@
 
             <Button
                 android:id="@+id/entertainment_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/button_home"
                 android:text="Entertainment"
@@ -110,8 +110,8 @@
 
         <Button
             android:id="@+id/education_button"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
             android:background="@drawable/button_home"
             android:text="Education"
             android:textAlignment="center"
@@ -123,8 +123,8 @@
 
         <Button
             android:id="@+id/history_button"
-            android:layout_width="180dp"
-            android:layout_height="180dp"
+            android:layout_width="165dp"
+            android:layout_height="165dp"
             android:layout_marginLeft="20dp"
             android:background="@drawable/button_home"
             android:text="History"
@@ -145,8 +145,8 @@
 
             <Button
                 android:id="@+id/med_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:background="@drawable/button_home"
                 android:text="Med"
                 android:textAlignment="center"
@@ -158,8 +158,8 @@
 
             <Button
                 android:id="@+id/game_button"
-                android:layout_width="180dp"
-                android:layout_height="180dp"
+                android:layout_width="165dp"
+                android:layout_height="165dp"
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/button_home"
                 android:text="Game"
@@ -180,8 +180,8 @@
 
                 <Button
                     android:id="@+id/business_button"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
                     android:background="@drawable/button_home"
                     android:text="Business"
                     android:textAlignment="center"
@@ -193,8 +193,8 @@
 
                 <Button
                     android:id="@+id/psychology_button"
-                    android:layout_width="180dp"
-                    android:layout_height="180dp"
+                    android:layout_width="165dp"
+                    android:layout_height="165dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/button_home"
                     android:text=" Psychology"
