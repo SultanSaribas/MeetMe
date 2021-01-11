@@ -44,7 +44,7 @@ public class SciTechActivity extends AppCompatActivity {
         metot();
 
         navigationbar();
-       // recyclerView();
+
     }
 
     public void metot(){

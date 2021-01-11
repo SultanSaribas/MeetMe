@@ -85,7 +85,7 @@ public class HomeActivity extends AppCompatActivity {
 
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(HomeActivity.this, SciTechActivity.class);
+               Intent intent = new Intent(HomeActivity.this, ArtandCultureActivity.class);
                startActivity(intent);
            }
        });

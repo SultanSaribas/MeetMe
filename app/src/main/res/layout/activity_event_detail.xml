@@ -138,6 +138,7 @@
                 android:padding="20dp"
                 android:text="https://zoom.us/j/95741383907?pwd=azc5L0tueFphdDV4WDBkUWFzbkZ2dz09  "
                 android:textStyle="bold"
+                android:textIsSelectable="true"
                 android:textAlignment="center"
                 android:textColor="@color/colorGrey2"/>
 
